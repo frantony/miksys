@@ -362,6 +362,9 @@ void FastCore::handleNext() {
         if (p2type == 0) {
             unsigned char c;
             st5_rd_peripheral_ok = system->peripheral_read(c);
+            if (!st5_rd_peripheral_ok) {
+                printf("!st5_rd_peripheral_ok\n");
+            }
             pu[0].p2 = c;
         }
         bool bsreg;

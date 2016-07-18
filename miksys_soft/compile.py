@@ -251,7 +251,7 @@ if len(sys.argv) != 3:
 fout = file(sys.argv[-1], 'wb')
 #consts_str = ' '.join(['-D%s=%d' % (k, v) for k, v in consts.iteritems()])
 m = None
-for l in subprocess.check_output('gcc -w -E %s -undef -nostdinc' % sys.argv[1], shell = True).split('\n'):
+for l in subprocess.check_output('gcc -I ../include -w -E %s -undef -nostdinc' % sys.argv[1], shell = True).split('\n'):
     l = l.strip()
     if len(l) == 0 or l[0] == '#': continue
     if in_macro:

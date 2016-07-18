@@ -211,10 +211,10 @@ us_ret: MOV MEM_ADDR_LO, [r15]
         MOV MEM_ADDR_HI, [r15+1]
         DRET
 
-#include "../include/math.H"
-#include "../include/string.H"
-#include "../include/usb.H"
-#include "../include/keyboard.H"
+#include "math.H"
+#include "string.H"
+#include "usb.H"
+#include "keyboard.H"
 
 .data DATA_CACHE_OFFSET DATA_MEM_OFFSET
 hello:  .ascii "Hello, World!\n"
@@ -236,7 +236,7 @@ shift_key: .const 0x12
 text_pointer: .const TEXT_FIELD_BEGIN
 
 keymap:
-#include "../include/keymap.H"
+#include "keymap.H"
 
 DATA_END:
 
